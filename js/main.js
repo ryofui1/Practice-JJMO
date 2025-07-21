@@ -75,8 +75,8 @@ randomBtn.addEventListener("click", () => {
     const MinValue2 = Number(minValueInput2.innerText)
     const MaxValue2 = Number(maxValueInput2.innerText)
 
-    const randomIndex = 2025-Math.floor(Math.random() * (MaxValue-MinValue)+MinValue);
-    const questionIndex = Math.floor(Math.random() * (MaxValue2-MinValue2)+MinValue2);
+    const randomIndex = 2025-Math.floor(Math.random() * (MaxValue-MinValue+1)+MinValue);
+    const questionIndex = Math.floor(Math.random() * (MaxValue2-MinValue2+1)+MinValue2);
     console.log(randomIndex);
     displayIframe.src = imgList[randomIndex];
 
