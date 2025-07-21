@@ -65,6 +65,7 @@ slider2.noUiSlider.on('update', function(values, handle) {
 // 抽選ボタン
 const randomBtn = document.getElementById("randomBtn");
 const task = document.getElementById("task");
+const pro_url = document.getElementById("pro_url");
 const displayIframe = document.getElementById("displayIfra");
 
 randomBtn.addEventListener("click", () => {
@@ -96,4 +97,6 @@ randomBtn.addEventListener("click", () => {
     + " - " 
     // +"<span style='color: red;'>" + (questionIndex) + "</span>" 
     +Stars;
+
+    pro_url.innerHTML = '<a href='+ imgList[randomIndex] + '>実際の問題</a>';
 });
