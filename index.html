@@ -4,13 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice JJMO</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+
+    <style>
+    #caution-box {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    display: none;
+    background-color: rgb(237, 253, 231);
+    }
+    #toggleBtn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    }
+    </style>
+
 </head>
 <body>
     <div id="app">
-        <h1>Hello,World!</h1>
-        <div>こんにちは、世界。</div>
-        <div class="contents"></div>
-        <iframe src="https://www.imojp.org/archive/mo2009/jjmo2009/problems/jjmo7yq.html" width="800" height="600" style="border: none;"></iframe>
+        <h1 style="font-size:200%;">JJMO 練習問題</h1>
+        <div class="container">
+            <div class="filters">
+                <h1>| Filter</h1>
+                
+
+                <div class="fil">
+                    <h2 style="background-color: rgb(237, 253, 231);">年号範囲</h2>
+                    <div class="hr"></div>
+                    <div class="filter">
+                        <h2 id="min-value" class="side"></h2>
+                        <div id="slider" class="slider"></div>
+                        <h2 id="max-value" class="side"></h2>
+                    </div>
+                </div>
+
+                <div class="fil">
+                    <h2 style="background-color: rgb(237, 253, 231);">問題範囲</h2>
+                    <div class="hr"></div>
+                    <div class="filter">
+                        <h2 id="min-value2" class="side"></h2>
+                        <div id="slider2" class="slider"></div>
+                        <h2 id="max-value2" class="side"></h2>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button id="randomBtn">問題抽選</button>
+                </div>
+                <button id="toggleBtn">▽ 注意事項を表示</button>
+<div id="caution-box">
+  <ul style="margin:0 0 1em 1em;padding:0;">
+    <li style="background-color: rgb(237, 253, 231);">2021年度のJJMOの開催はなかったので、その年の問題は表示されません。</li>
+    <li style="background-color: rgb(237, 253, 231);">2011年以前の問題には解答はありません。解説も含め書籍、ネット記事の参照を推奨します。</li>
+  </ul>
+  <a href="https://note.com/mathmathmat/n/n05c4dfe356d7" style="background-color: rgb(237, 253, 231);">解説のあるネット記事の一例</a>
+</div>
+
+<script>
+const btn = document.getElementById('toggleBtn');
+const box = document.getElementById('caution-box');
+
+btn.addEventListener('click', function() {
+  if (box.style.display === '' || box.style.display === 'none') {
+    box.style.display = 'block';
+    btn.textContent = '△ 注意事項を非表示';
+  } else {
+    box.style.display = 'none';
+    btn.textContent = '▽ 注意事項を表示';
+  }
+});
+</script>
+            </div>
+            <div class="wr"></div>
+            <div class="questions">
+                <h1>| Questions</h1>
+                <h2 id="task"></h2>
+                <iframe id="displayIfra" src="" width="800" height="600" style="border: none;"></iframe>
+            </div>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>

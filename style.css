@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+*{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: rgb(246, 255, 240);
+}
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hr {
+        border: 0.5px ridge rgb(161, 173, 156);
+        width: '100%';
+        height: 0;}
+
+.wr {
+        border: 0.5px ridge rgb(161, 173, 156);
+        height: '100%';
+        width: 0;}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.fil{
+    border:rgb(149, 255, 107),solid,1px;
+    border-radius: 10px;
+    background-color: rgb(237, 253, 231);
+    padding: 0 8px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.filter{
+    background-color: rgb(237, 253, 231);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;      /* スライダーとラベルの縦位置を揃える */
+    gap: 1em;                 /* 要素同士の間隔を調整（必要に応じて） */
+}
+.slider{
+    flex-basis: 75%;
+    background-color: rgb(237, 253, 231);
+}
+
+.side{
+    background-color: rgb(237, 253, 231);
+}
+
+
+/* 基本スタイル：1300px超え時に横並び */
+.filters{
+    flex: 1;
+    box-sizing: border-box;
+    padding: 16px;
+    flex-basis:40%;
+}
+.questions {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 16px;
+    flex-basis:60%;
+}
+
+iframe{
+    flex:1;
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+}
+
+
+
+#randomBtn {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);/*影を小さく*/
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #66d882;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #619265;
+    border-radius: 3px;
+    width: 100%;
+    height: 60px;
+    font-size: 150%;
+    font-weight: 300;
+}
+#randomBtn:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+
+/* 幅1300px以下は縦積み */
+@media screen and (max-width: 1300px) {
+    .container {
+        flex-direction: column;
+    }
+    .filters,
+    .questions {
+        flex-basis:100%;
+    }
+}
+
+
+a{
+  color: #619265;
+  padding: 0 10px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 226, 64) 50%);
+  background-position: 0 0;
+  background-size: 200% auto;
+  transition: .3s;
+}
+
+a:hover{
+  background-position: -100% 0;
+  color: #fff;
+}
+
